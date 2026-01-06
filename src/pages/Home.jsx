@@ -1,33 +1,35 @@
 import { Link } from 'react-router-dom';
 
+const projects = [
+  { path: '/todos', emoji: '✅', title: 'Todos', desc: 'A simple todo list to manage your tasks' },
+  { path: '/counter', emoji: '🔢', title: 'Counter', desc: 'A basic counter with increment and decrement' },
+  // Add more projects here as you build them
+];
+
 const Home = () => {
   return (
-    <div className="text-center">
-      <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
-        Welcome to DevPlayground
-      </h1>
-      <p className="text-gray-400 text-lg mb-12">
-        A collection of mini React projects to explore and learn.
-      </p>
+    <div>
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+          Pick a Project
+        </h1>
+        <p className="text-gray-400 text-lg">
+          Click any card to get started
+        </p>
+      </div>
 
-      <div className="flex gap-8 justify-center flex-wrap">
-        <Link
-          to="/todos"
-          className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 w-64 text-center border border-gray-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/20 no-underline"
-        >
-          <span className="text-5xl block mb-4">✅</span>
-          <h3 className="text-xl font-semibold text-white mb-2">Todos</h3>
-          <p className="text-gray-400 text-sm">A simple todo list to manage your tasks</p>
-        </Link>
-
-        <Link
-          to="/counter"
-          className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 w-64 text-center border border-gray-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/20 no-underline"
-        >
-          <span className="text-5xl block mb-4">🔢</span>
-          <h3 className="text-xl font-semibold text-white mb-2">Counter</h3>
-          <p className="text-gray-400 text-sm">A basic counter with increment and decrement</p>
-        </Link>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {projects.map((project) => (
+          <Link
+            key={project.path}
+            to={project.path}
+            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/20 no-underline"
+          >
+            <span className="text-4xl block mb-3">{project.emoji}</span>
+            <h3 className="text-lg font-semibold text-white mb-1">{project.title}</h3>
+            <p className="text-gray-400 text-sm">{project.desc}</p>
+          </Link>
+        ))}
       </div>
     </div>
   );

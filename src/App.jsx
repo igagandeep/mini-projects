@@ -7,9 +7,9 @@ import Counter from './counter/Counter';
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen">
         <Navbar />
-        <main className="flex-1 p-6 max-w-5xl mx-auto w-full">
+        <main className="p-6 max-w-6xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/todos" element={<Todos />} />
