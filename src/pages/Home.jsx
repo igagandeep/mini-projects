@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 const projects = [
   { path: '/todos', emoji: '✅', title: 'Todos', desc: 'A simple todo list to manage your tasks' },
   { path: '/counter', emoji: '🔢', title: 'Counter', desc: 'A basic counter with increment and decrement' },
+  { path: '/character-counter', emoji: '✍️', title: 'Character Counter', desc: 'Textarea with live character count and warning at 80% capacity' },
+  
   // Add more projects here as you build them
 ];
 
